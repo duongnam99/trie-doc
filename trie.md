@@ -15,7 +15,7 @@ First we see what a trie is. Trie can store information about keys/numbers/strin
 Tries consists of nodes, where each node stores a character/bit. We can insert new strings/numbers accordingly.  
 Here is an example trie of strings:
 
-![][https://qph.fs.quoracdn.net/main-qimg-aea28d9cd34aaf2d5783f4cd04e5abbd]
+![1][https://qph.fs.quoracdn.net/main-qimg-aea28d9cd34aaf2d5783f4cd04e5abbd]
 
   
 Nguồn: Wikipedia.  
@@ -32,7 +32,7 @@ Nếu chúng ta có cấu trức dữ liệu này, chúng ta sẽ thêm các s�
 Trie là cấu trúc dữ liệu mà ta sẽ sử dụng. Trước tiên, hãy xem cách mà ta chèn các phần tử vào trie.
 
 
-![][https://qph.fs.quoracdn.net/main-qimg-388217a1992f1b2aac51e9917aa76d9c]
+![2][https://qph.fs.quoracdn.net/main-qimg-388217a1992f1b2aac51e9917aa76d9c]
 
   
 Vậy, chúng ta sẽ theo dấu vết đưòng đi của những số mà ta cần chèn.chúng ta không phải vẽ lại đường đi hiện tại.  
@@ -42,7 +42,7 @@ Bằng cách này, chúng ta lưu trữ tất cả dữ liệu về tất cả c
 Bây giờ, cho truy vấn của loại 2:
 Đặt số Y của chúng ta là b1,b2...bn, trong đó b1,b2.. là các bit nhị phân. Chúng ta bắt đầu từ b1. Bây giờ cho XOR là maximum, chúng ta sẽ cố gặng tạo bit 1 quan trọng nhất sau khi dùng XOR. Vì vậy, nếu b1 là 0, chúng ta sẽ cần 1 và ngược lại. Trong trie, chúng ta đi đến vùng bit được yêu cầu. Nếu tuỳ chọn thuận lợi không được, chúng ta sẽ chuyển sang vùng khác. Làm điều này cho i=1 đến n, chúng ta sẽ lấy maximum XOR khả thi.  
 
-![][https://qph.fs.quoracdn.net/main-qimg-e5d624e2cd693d713840a30ca9aaa461]
+![3][https://qph.fs.quoracdn.net/main-qimg-e5d624e2cd693d713840a30ca9aaa461]
 
 Truy vấn quá log2(MAX).
 
@@ -86,7 +86,7 @@ Chúng ta so sánh các bit tương ứng của q và k, bắt đầu từ các 
 
 Nếu q là 1, và p là 0, chúng ta thực hiện điều này:   
 
-![][https://qph.fs.quoracdn.net/main-qimg-f24ea5ecf11805e7bcd82a48bb9cad25]  
+![4][https://qph.fs.quoracdn.net/main-qimg-f24ea5ecf11805e7bcd82a48bb9cad25]  
 
 Tương tự chúng ta có thể dễ dàng giải ra 3 trường hợp khác (q=1,p=1), (q=0,p=1) and (q=0,p=1).
 Vậy, chúng ta cần thay đổi cấu trúc của chúng ta ở đây, chúng ta cũng gĩư một số node lá mà có thể tiếp cạn từ node hiện tại nếu ta đi từ phía bên trái và tương tự đối với bên phải. Bởi vì, mặt khác đô phức tapj sẽ tăng dần, nếu chúng ta duyệt cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi thêm số và trong cây một cách dễ dàng.  
@@ -122,7 +122,7 @@ Ta cần tìm người chơi nào (1 hoặc 2) mà có khả năng chiến thắ
 Vậy, ý tưởng ở đây lại là xây dựng một trie chứa các chuỗi. Tại sao? Bởi một trie luôn lưu trữ thông tin về tất cả các tiền tố. Bây giờ, ta sẽ thử đánh giá xem với mỗi node liệu người chơi đầu tiên có khả năng giành thắng lợi hay không. Ta có thể thực hiện điều này theo cách đệ quy. Với node v, từng node u mà u là con trực tiếp của v, nếu người chơi đầu tiên có khả năng thua vì u, thì với node v người chơi đầu sẽ có khả năng giành chiến thắng.  
 Ví dụ, giả sử ta có "abc", "abd", "acd".  
 Trie của chúng ta sẽ nhìn như sau:  
-![][https://qph.fs.quoracdn.net/main-qimg-f81def67dffcc9e95306d65b27daa2f7-c]
+![5][https://qph.fs.quoracdn.net/main-qimg-f81def67dffcc9e95306d65b27daa2f7-c]
 
   
 Tất cả node lá đều có khả năng chiến thắng.
