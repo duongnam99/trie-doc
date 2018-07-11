@@ -3,7 +3,7 @@
 
 # Hướng dẫn về Trie (cây tiền tố) và các ví dụ
 
-Tôi sẽ viết trong bài viết này về Tries và khái niệm tổng quát được sử dụng trong các vận dụng nhỏ của vấn đề. Chúng ta sẽ thấy 2-3 vấn đề mà trie hữu ích.
+Tôi sẽ viết trong bài viết này về Tries và khái niệm tổng quát được sử dụng trong các vấn đề đòi hỏi sự linh hoạt. Chúng ta sẽ thấy 2-3 vấn đề mà trie hữu ích.
 
 Đầu tiên chúng ta xem xem trie là gì. Trie có thể lưu thông tin về keys/numbers/strings nhỏ gọn trọng một cây.  
 Trie bao gồm các node, nơi mỗi node lưu trữ một ký tự hoặc một bit. Chúng ta có thể thêm các chuỗi hoặc số phù hợp.  
@@ -29,7 +29,7 @@ Trie là cấu trúc dữ liệu mà ta sẽ sử dụng. Trước tiên, hãy x
 ![2](https://qph.fs.quoracdn.net/main-qimg-388217a1992f1b2aac51e9917aa76d9c)
 
   
-Vậy, chúng ta sẽ theo dấu vết đưòng đi của những số mà ta cần chèn.chúng ta không phải vẽ lại đường đi hiện tại.  
+Vậy, chúng ta sẽ lần theo thứ tự của những số mà ta cần chèn. Chúng ta không phải vẽ lại đường đi hiện tại.  
 
 Chèn một key có độ dài N cần O(N) là log2(MAX) trong đó MAX là số tối đa số được chèn trong trie, bởi vì có tối đa log2(MAX) bit nhị phân trong số.  
 Bằng cách này, chúng ta lưu trữ tất cả dữ liệu về tất cả các số được chèn vào trie đến bây giờ.  
@@ -83,7 +83,7 @@ Nếu q là 1, và p là 0, chúng ta thực hiện điều này:
 ![4](https://qph.fs.quoracdn.net/main-qimg-f24ea5ecf11805e7bcd82a48bb9cad25)  
 
 Tương tự chúng ta có thể dễ dàng giải ra 3 trường hợp khác (q=1,p=1), (q=0,p=1) and (q=0,p=1).
-Vậy, chúng ta cần thay đổi cấu trúc của chúng ta ở đây, chúng ta cũng gĩư một số node lá mà có thể tiếp cạn từ node hiện tại nếu ta đi từ phía bên trái và tương tự đối với bên phải. Bởi vì, mặt khác đô phức tapj sẽ tăng dần, nếu chúng ta duyệt cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi thêm số và trong cây một cách dễ dàng.  
+Vậy, chúng ta cần thay đổi cấu trúc của chúng ta ở đây, chúng ta cũng gĩư một số node lá mà có thể tiếp cận từ node hiện tại nếu ta đi từ phía bên trái và tương tự đối với bên phải. Bởi vì, mặt khác đô phức tạp sẽ tăng dần, nếu chúng ta duyệt cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi thêm số vào trong cây một cách dễ dàng.  
 
 Vấn đề này đưọc đặt trong CodeCraft'14. Bạn có thể thực hành tại đây: [SPOJ.com - Problem SUBXOR](http://www.spoj.com/problems/SUBXOR)  
 
