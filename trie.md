@@ -14,9 +14,9 @@ Trie bao gồm các node, nơi mỗi node lưu trữ một ký tự hoặc một
   
 Nguồn: Wikipedia.  
 
-Nhưng chúng ta sẽ xử lý các con số ở đây, và đặc biệt trong các bit nhị phân. Chúng ta sẽ thấy việc chúng ta giải quyết các vấn đề.
+Nhưng chúng ta sẽ xử lý các con số ở đây, và đặc biệt trong các bit nhị phân. Chúng ta sẽ thấy khi chúng ta giải quyết các vấn đề.
 
-**Vấn đề 1**: Cho một mảng các số nguyên, chúng ta phải tìm 2 phần tử mà XOR  cho gía trị lớn nhất.
+**Vấn đề 1**: Cho một mảng các số nguyên, chúng ta phải tìm 2 phần tử mà XOR  cho giá trị lớn nhất.
 **Giải quyết:**  
 Gỉa sử chúng ta có một cấu trúc dữ liệu thỏa mãn hai loại truy vấn:   
 1\. Chèn một số X    
@@ -34,7 +34,7 @@ Vậy, chúng ta sẽ theo dấu vết đưòng đi của những số mà ta c�
 Chèn một key có độ dài N cần O(N) là log2(MAX) trong đó MAX là số tối đa số được chèn trong trie, bởi vì có tối đa log2(MAX) bit nhị phân trong số.  
 Bằng cách này, chúng ta lưu trữ tất cả dữ liệu về tất cả các số được chèn vào trie đến bây giờ.  
 Bây giờ, cho truy vấn của loại 2:
-Đặt số Y của chúng ta là b1,b2...bn, trong đó b1,b2.. là các bit nhị phân. Chúng ta bắt đầu từ b1. Bây giờ cho XOR là maximum, chúng ta sẽ cố gặng tạo bit 1 quan trọng nhất sau khi dùng XOR. Vì vậy, nếu b1 là 0, chúng ta sẽ cần 1 và ngược lại. Trong trie, chúng ta đi đến vùng bit được yêu cầu. Nếu tuỳ chọn thuận lợi không được, chúng ta sẽ chuyển sang vùng khác. Làm điều này cho i=1 đến n, chúng ta sẽ lấy maximum XOR khả thi.  
+Đặt số Y của chúng ta là b1,b2...bn, trong đó b1,b2.. là các bit nhị phân. Chúng ta bắt đầu từ b1. Bây giờ cho XOR là maximum, chúng ta sẽ cố gặng tạo bit 1 quan trọng nhất sau khi dùng XOR. Vì vậy, nếu b1 là 0, chúng ta sẽ cần 1 và ngược lại. Trong trie, chúng ta đi đến vùng bit được yêu cầu. Nếu tuỳ chọn thuận lợi không được, chúng ta sẽ chuyển sang hướng khác. Làm điều này cho i=1 đến n, chúng ta sẽ lấy maximum XOR khả thi.  
 
 ![3](https://qph.fs.quoracdn.net/main-qimg-e5d624e2cd693d713840a30ca9aaa461)
 
@@ -82,10 +82,10 @@ Nếu q là 1, và p là 0, chúng ta thực hiện điều này:
 
 ![4](https://qph.fs.quoracdn.net/main-qimg-f24ea5ecf11805e7bcd82a48bb9cad25)  
 
-Tương tự chúng ta có thể dễ dàng giải ra 3 trường hợp khác (q=1,p=1), (q=0,p=1) and (q=0,p=1).
-Vậy, chúng ta cần thay đổi cấu trúc của chúng ta ở đây, chúng ta cũng gĩư một số node lá mà có thể tiếp cạn từ node hiện tại nếu ta đi từ phía bên trái và tương tự đối với bên phải. Bởi vì, mặt khác đô phức tapj sẽ tăng dần, nếu chúng ta duyệt cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi thêm số và trong cây một cách dễ dàng.  
+Tương tự chúng ta có thể dễ dàng giải với 3 trường hợp khác (q=1,p=1), (q=0,p=1) and (q=0,p=1).
+Vậy, chúng ta cần thay đổi cấu trúc của chúng ta ở đây, chúng ta cũng giữ số node lá mà có thể tiếp cận từ node hiện tại nếu ta đi từ phía bên trái và tương tự đối với bên phải. Bởi vì, mặt khác đô phức tạp sẽ tăng dần, nếu chúng ta duyệt cây lặp đi lặp lại. Chúng ta có thể làm điều này trong khi thêm số và trong cây một cách dễ dàng.  
 
-Vấn đề này đưọc đặt trong CodeCraft'14. Bạn có thể thực hành tại đây: [SPOJ.com - Problem SUBXOR](http://www.spoj.com/problems/SUBXOR)  
+Vấn đề này được đặt trong CodeCraft'14. Bạn có thể thực hành tại đây: [SPOJ.com - Problem SUBXOR](http://www.spoj.com/problems/SUBXOR)  
 
 Bây giờ, hãy nói về việc triển khai.  
 Để triển khai code cho trie trong C/CPP ta có thể giữ các node và các con trỏ trái và phải. Ta có thể viết hàm đệ quy.
